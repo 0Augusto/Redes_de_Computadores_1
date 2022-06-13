@@ -18,7 +18,7 @@ public class ClientHandler implements Runnable {
   }
 
   public void run() {
-    // quando chegar uma msg, distribui pra todos
+    // Mensgaens quando chegam, sao distribuidas a todos
     Scanner scanner = new Scanner(this.client);
     while (scanner.hasNextLine()) {
       try {
