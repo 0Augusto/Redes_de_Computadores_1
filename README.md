@@ -6,7 +6,9 @@ Instruções para o trabalho prático: Aplicação TCP/IP troca de mensagens.
 Application e execute os comandos abaixo
 
 1 - Abra um terminal e execute java Application.Server 6066
+
 2 - Abra outro terminal e execute java Application.Client localhost 6066
+
 3 - Abra outro terminal e execute java Application.Client localhost 6066
 
 Digite uma mensagem no terminal numero 2
