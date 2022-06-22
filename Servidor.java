@@ -54,7 +54,7 @@ public class Servidor extends Thread {
       clientes.add(bfw);
       nome = msg = bfr.readLine();
 
-      while(!"Sair".equalsIgnoreCase(msg) && msg != null)
+      while(!"Desconectado".equalsIgnoreCase(msg) && msg != null)
         {
         msg = bfr.readLine();
         sendToAll(bfw, msg);
