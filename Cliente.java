@@ -102,18 +102,18 @@ public void conectar() throws IOException{
   public void enviarMensagem(String msg) throws IOException{
 
     if(msg.equals("Sair")){
-      bfw.write("Desconectado \r\n");
-      texto.append("Desconectado \r\n");
+      bfw.write("Desconectado");
+      texto.append("Desconectado\r\n");
     }else{
       bfw.write(msg+"\r\n");
-      texto.append( txtNome.getText() + " diz -> " +         txtMsg.getText()+"\r\n");
+      texto.append( "Você -> " +         txtMsg.getText()+"\r\n");
     }
      bfw.flush();
      txtMsg.setText("");
   }//end envia mensagem
 
 
-  
+
   /**
    * Método usado para receber mensagem do servidor
    * @throws IOException retorna IO Exception caso dê algum erro.
@@ -125,15 +125,16 @@ public void conectar() throws IOException{
     BufferedReader bfr = new BufferedReader(inr);
     String msg = "";
 
-      while(!"Sair".equalsIgnoreCase(msg))
+      while(!"Desconectado".equalsIgnoreCase(msg)){
 
         if(bfr.ready()){
           msg = bfr.readLine();
-        if(msg.equals("Sair"))
-          texto.append("Servidor caiu! \r\n");
+          if(msg.equals("Desconectado"))
+            texto.append("Servidor caiu! \r\n");
           else
-          texto.append(msg+"\r\n");
-          }
+            texto.append(msg+"\r\n");
+        }
+      }
   }//end Escutar
 
 
